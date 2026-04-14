@@ -752,18 +752,21 @@ h2 {
   height: 180px;
   position: relative;
   border-bottom: 1px solid var(--glass-border);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .sparc-visual {
-  background: linear-gradient(45deg, #001f3f, var(--neon-blue));
+  background-image: linear-gradient(45deg, rgba(0, 31, 63, 0.35), rgba(0, 255, 255, 0.3)), url("./sparc.png");
 }
 
 .polaris-visual {
-  background: linear-gradient(45deg, #1e003f, var(--neon-purple));
+  background-image: linear-gradient(45deg, rgba(30, 0, 63, 0.35), rgba(191, 0, 255, 0.3)), url("./polaris.png");
 }
 
 .jt60sa-visual {
-  background: linear-gradient(45deg, #3f1200, var(--neon-orange));
+  background-image: linear-gradient(45deg, rgba(63, 18, 0, 0.35), rgba(255, 119, 0, 0.3)), url("./JT-60SA.png");
 }
 
 .reactor-info {
