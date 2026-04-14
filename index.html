@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reactor Boot Sequence</title>
+  <meta name="description" content="A inicialização de 8 subsistemas críticos de um Reator de Fusão Nuclear.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Inter:wght@300;400;600;800&family=Outfit:wght@200;400;700;900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="./style.css" />
+  <!-- MathJax for the equation in Section 1 -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+  <!-- Custom Mouse Cursor -->
+  <div class="custom-cursor">
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
+  </div>
+
+  <!-- Boot Overlay Loader -->
+  <div id="boot-overlay">
+    <div class="boot-logs" id="boot-logs"></div>
+  </div>
+
+  <!-- Interactive Particles Canvas -->
+  <canvas id="particle-canvas"></canvas>
+
+  <!-- Parallax Background Elements -->
+  <div class="parallax-bg layer-1" id="bg-stars"></div>
+  <div class="parallax-bg layer-2" id="bg-nebula"></div>
+  <div class="parallax-bg layer-3" id="bg-grid"></div>
+
+  <div class="boot-header">
+    <div class="status-indicator"><span class="dot green"></span> SYSTEM ONLINE. INITIATING BOOT SEQUENCE...</div>
+  </div>
+
+  <!-- HERO SECTION -->
+  <section id="hero" class="section reveal hero-section">
+    <div class="hero-content text-center">
+      <h1 class="glow-text">O Sol na Garrafa:<br><span class="highlight">A Era da Fusão Nuclear</span></h1>
+      <p class="subtitle-text">Reactor Boot Sequence</p>
+    </div>
+  </section>
+
+  <!-- SECTION 1: INICIALIZAÇÃO ENERGÉTICA -->
+  <section id="module-1" class="section reveal">
+    <div class="visual-container float-idle module-1-visual">
+      <div class="energy-core"></div>
+      <div class="equation glowing-math">
+        \[ E = mc^2 \]
+      </div>
+    </div>
+    <div class="content module-card glass-panel float-idle delay-1">
+      <div class="module-label">MÓDULO 1</div>
+      <h2>1. O Salto Energético</h2>
+      <p>A fusão é a forma mais densa de energia do universo, regida pela equação \(E=mc^2\). Ela libera incríveis
+        340.000.000 MJ por kg, sendo cerca de 10 milhões de vezes mais eficiente que os combustíveis fósseis. Uma colher
+        de chá de combustível equivale a 10 toneladas de carvão.</p>
+    </div>
+  </section>
+
+  <!-- SECTION 2: ALQUIMIA DO COMBUSTÍVEL -->
+  <section id="module-2" class="section reveal right-align">
+    <div class="content module-card glass-panel float-idle delay-2">
+      <div class="module-label">MÓDULO 2</div>
+      <h2>2. O Combustível Autossustentável</h2>
+      <p>Ao invés do perigoso Urânio da fissão, a fusão une Deutério (extraído da água do mar) e Trítio. Como o Trítio é
+        raro, os reatores usam uma "Manta de Lítio Líquido" na parede interna. O lítio absorve os nêutrons da reação e
+        gera novo Trítio em tempo real, criando um combustível infinito.</p>
+    </div>
+    <div class="visual-container float-idle module-2-visual">
+      <div class="atom atom-d">D</div>
+      <div class="atom atom-t">T</div>
+      <div class="collision-flash"></div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: A GARRAFA MAGNÉTICA -->
+  <section id="module-3" class="section reveal">
+    <div class="visual-container float-idle module-3-visual">
+      <div class="torus-wireframe"></div>
+      <div class="magnetic-field field-1"></div>
+      <div class="magnetic-field field-2"></div>
+    </div>
+    <div class="content module-card glass-panel float-idle delay-1">
+      <div class="module-label">MÓDULO 3</div>
+      <h2>3. Magnetismo e Supercondutores</h2>
+      <p>O plasma passa dos 100 milhões de graus Celsius, derretendo qualquer material sólido instantaneamente. A
+        solução são os Supercondutores de Alta Temperatura (HTS) baseados em REBCO. Eles operam a 77 K e criam campos
+        magnéticos colossais, levitando o plasma e reduzindo o tamanho do reator em 40 vezes.</p>
+    </div>
+  </section>
+
+  <!-- SECTION 4: INJEÇÃO E AQUECIMENTO -->
+  <section id="module-4" class="section reveal right-align">
+    <div class="content module-card glass-panel float-idle delay-2">
+      <div class="module-label">MÓDULO 4</div>
+      <h2>4. Bombardeio Subatômico</h2>
+      <p>Para manter a chama viva, usamos "Girotrons" de alta potência que bombardeiam o plasma com micro-ondas. O
+        combustível não é colocado como gasolina; pequenas esferas congeladas (pellets) de Deutério-Trítio são
+        disparadas para o centro do plasma através de canhões pneumáticos em altíssima velocidade.</p>
+    </div>
+    <div class="visual-container float-idle module-4-visual">
+      <div class="cannon"></div>
+      <div class="pellets-track">
+        <div class="pellet"></div>
+        <div class="pellet"></div>
+      </div>
+      <div class="microwave-rays">
+        <div class="ray"></div>
+        <div class="ray"></div>
+        <div class="ray"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5: CIÊNCIA DE MATERIAIS -->
+  <section id="module-5" class="section reveal">
+    <div class="visual-container float-idle module-5-visual">
+      <div class="shield-texture heat-cycle"></div>
+    </div>
+    <div class="content module-card glass-panel float-idle delay-1">
+      <div class="module-label">MÓDULO 5</div>
+      <h2>5. Armadura e Exaustão</h2>
+      <p>A "Primeira Parede" interna é de Tungstênio, o metal com o maior ponto de fusão existente (3422 °C). O excesso
+        de calor letal é drenado pelo "Divertor", o cano de escape do reator, feito de Ligas de Cobre e Cromo-Zircônio
+        para aguentar fluxos térmicos comparáveis aos da superfície do Sol.</p>
+    </div>
+  </section>
+
+  <!-- SECTION 6: ORQUESTRAÇÃO DE CÓDIGO (FOCO ADS) -->
+  <section id="module-6" class="section reveal full-width-section">
+    <div class="module-header text-center padding-bottom">
+      <div class="module-label">MÓDULO 6</div>
+      <h2>6. Malha de Controle Real-Time</h2>
+      <p class="max-600 glass-panel">A física fornece as peças, mas o software mantém o sistema vivo. Câmeras
+        infravermelhas e espectrômetros monitoram o plasma. Se a estrutura deforma apenas 1 milímetro, o Sistema de
+        Controle Digital recalcula a corrente em 19 bobinas magnéticas diferentes e aplica a correção em menos de 10
+        milissegundos.</p>
+    </div>
+    <div class="terminal-ui glass-panel float-idle">
+      <div class="terminal-bar">
+        <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+        <span class="terminal-title">~/reactor/control_system - bash</span>
+      </div>
+      <div class="terminal-content">
+        <div class="code-flow" id="live-code"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 7: INTELIGÊNCIA ARTIFICIAL (FOCO ADS) -->
+  <section id="module-7" class="section reveal right-align full-width-section reverse-flex">
+    <div class="visual-container float-idle module-7-visual neon-box">
+      <div class="hologram-grid"></div>
+      <div class="neural-network">
+        <svg viewBox="0 0 100 100">
+          <circle cx="20" cy="50" r="2" class="node" />
+          <circle cx="50" cy="20" r="2" class="node" />
+          <circle cx="50" cy="80" r="2" class="node" />
+          <circle cx="80" cy="50" r="2" class="node" />
+          <line x1="20" y1="50" x2="50" y2="20" class="edge pulse" />
+          <line x1="20" y1="50" x2="50" y2="80" class="edge" />
+          <line x1="50" y1="20" x2="80" y2="50" class="edge" />
+          <line x1="50" y1="80" x2="80" y2="50" class="edge pulse" />
+          <line x1="50" y1="20" x2="50" y2="80" class="edge" />
+        </svg>
+      </div>
+    </div>
+    <div class="content module-card glass-panel float-idle delay-2">
+      <div class="module-label">MÓDULO 7</div>
+      <h2>7. Deep Learning & Gêmeos Digitais</h2>
+      <p>O plasma é caótico. Para dominá-lo, algoritmos de Aprendizado de Reforço da DeepMind ajustam o campo magnético
+        milhares de vezes por segundo. Computadores de Exaescala rodam "Gêmeos Digitais", criando cópias virtuais
+        massivas para testar a magnetoidrodinâmica antes de ligar a máquina física.</p>
+    </div>
+  </section>
+
+  <!-- SECTION 8: PROJETOS COMERCIAIS ATUAIS -->
+  <section id="module-8" class="section reveal reactors-section">
+    <div class="module-header text-center">
+      <div class="module-label">MÓDULO 8</div>
+      <h2>8. A Frota de 2026</h2>
+      <p class="max-600 subtitle-text">As instalações e reatores de fusão mais inovadores operando e sendo construídos
+        ao redor do globo em nossa corrida comercial.</p>
+    </div>
+
+    <div class="slider-container" id="reactor-slider">
+      <div class="slider-track" id="slider-track">
+
+        <div class="slider-card glass-panel float-idle neon-blue">
+          <div class="reactor-visual sparc-visual"></div>
+          <div class="reactor-info">
+            <h3>SPARC</h3>
+            <p>Usa ímãs HTS para gerar campos de 20 Tesla.</p>
+          </div>
+        </div>
+
+        <div class="slider-card glass-panel float-idle neon-purple delay-1">
+          <div class="reactor-visual polaris-visual"></div>
+          <div class="reactor-info">
+            <h3>Polaris</h3>
+            <p>Acelera anéis de plasma em linha reta e gera eletricidade diretamente do magnetismo, sem precisar de
+              turbinas a vapor.</p>
+          </div>
+        </div>
+
+        <div class="slider-card glass-panel float-idle neon-orange delay-2">
+          <div class="reactor-visual jt60sa-visual"></div>
+          <div class="reactor-info">
+            <h3>JT-60SA</h3>
+            <p>O laboratório gigante do Japão testando estabilidade de longo prazo.</p>
+          </div>
+        </div>
+
+      </div>
+      <div class="slider-instructions">Arraste para explorar ►</div>
+    </div>
+  </section>
+
+  <!-- CREDITS SECTION (CREW ROSTER) -->
+  <section id="credits" class="section reveal full-width-section">
+    <div class="module-header text-center padding-bottom">
+      <div class="module-label">LOG DE SISTEMA</div>
+      <h2>Equipe de Engenharia P.I.</h2>
+      <p class="max-600 subtitle-text">Nível de Acesso Operacional: Autorizado.</p>
+    </div>
+
+    <div class="crew-grid max-600 glass-panel float-idle">
+      <div class="crew-member"><span class="dot green"></span> Aluizio Monteiro Schuster Junior</div>
+      <div class="crew-member"><span class="dot green"></span> Eduarda Horning Bzunek</div>
+      <div class="crew-member"><span class="dot green"></span> José Otavio Chacorowski Raimundo</div>
+      <div class="crew-member"><span class="dot green"></span> João Gualberto Boissa Netto</div>
+      <div class="crew-member"><span class="dot green"></span> João Matheus Pianaro</div>
+      <div class="crew-member"><span class="dot green"></span> Júlio César Ferreira</div>
+      <div class="crew-member"><span class="dot green"></span> Yasmin Dos Santos Pereira</div>
+    </div>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script type="module" src="./main.js"></script>
+</body>
+
+</html>
