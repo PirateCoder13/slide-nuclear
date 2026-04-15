@@ -64,6 +64,101 @@ body {
   opacity: 0.15;
 }
 
+#reference {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+#reference .atom-background {
+  position: absolute;
+  left: 50%;
+  top: 56%;
+  width: 1960px;
+  height: 1960px;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.34;
+  filter: drop-shadow(0 0 42px rgba(0, 229, 255, 0.34));
+}
+
+#reference .atom-core {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, #fff 0%, var(--neon-cyan) 45%, rgba(0, 229, 255, 0.2) 100%);
+  box-shadow: 0 0 36px rgba(0, 229, 255, 0.9);
+}
+
+#reference .atom-orbit {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1240px;
+  height: 480px;
+  margin: -240px 0 0 -620px;
+  border: 1px solid rgba(0, 243, 255, 0.35);
+  border-radius: 50%;
+  animation: atom-spin 10s linear infinite;
+}
+
+#reference .atom-orbit::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: -12px;
+  width: 24px;
+  height: 24px;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 0 16px rgba(0, 243, 255, 0.9);
+}
+
+#reference .orbit-1 {
+  transform: rotate(0deg);
+}
+
+#reference .orbit-2 {
+  transform: rotate(60deg);
+  animation-duration: 12s;
+}
+
+#reference .orbit-3 {
+  transform: rotate(120deg);
+  animation-duration: 14s;
+}
+
+@keyframes atom-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media(max-width: 900px) {
+  #reference .atom-background {
+    width: 1240px;
+    height: 1240px;
+    top: 54%;
+    opacity: 0.26;
+  }
+
+  #reference .atom-orbit {
+    width: 720px;
+    height: 280px;
+    margin: -140px 0 0 -360px;
+  }
+}
+
 @keyframes bg-drift {
   from {
     background-position: 0 0;
@@ -800,6 +895,44 @@ h2 {
   font-size: 0.8rem;
   letter-spacing: 2px;
   animation: blink 2s infinite;
+}
+
+/* --- VIDEO REFERENCE PREVIEW --- */
+.video-preview-link {
+  width: min(900px, 92vw);
+  padding: 1rem;
+  text-decoration: none;
+  color: var(--text-main);
+  display: block;
+  position: relative;
+  z-index: 1;
+  border-radius: 16px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.video-preview-link:hover {
+  transform: translateY(-4px);
+  border-color: rgba(0, 243, 255, 0.45);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45), 0 0 22px rgba(0, 229, 255, 0.18);
+}
+
+.video-preview-image {
+  width: 100%;
+  max-height: 450px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid var(--glass-border);
+  display: block;
+}
+
+.video-preview-cta {
+  display: inline-block;
+  margin-top: 0.9rem;
+  font-family: var(--font-mono);
+  letter-spacing: 1px;
+  color: var(--neon-cyan);
+  border-bottom: 1px solid var(--neon-cyan);
+  padding-bottom: 0.1rem;
 }
 
 /* --- SECTION 9: CREDITS (CREW) --- */
