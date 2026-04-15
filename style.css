@@ -252,6 +252,10 @@ h2 {
   animation-delay: -3s;
 }
 
+.delay-3 {
+  animation-delay: -4.5s;
+}
+
 @keyframes float {
 
   0%,
@@ -767,6 +771,10 @@ h2 {
 
 .jt60sa-visual {
   background-image: linear-gradient(45deg, rgba(63, 18, 0, 0.35), rgba(255, 119, 0, 0.3)), url("./JT-60SA.png");
+}
+
+.wendelstein-7x-visual {
+  background-image: linear-gradient(45deg, rgba(0, 100, 120, 0.4), rgba(0, 229, 255, 0.25)), url("./Wendelstein%207-X.png");
 }
 
 .reactor-info {
