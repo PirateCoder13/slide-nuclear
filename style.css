@@ -24,8 +24,15 @@ body {
   background-color: var(--bg-color);
   color: var(--text-main);
   font-family: var(--font-sans);
-  overflow-x: hidden;
+  min-width: 800px;
+  min-height: 600px;
+  overflow-x: auto;
   line-height: 1.6;
+}
+
+html {
+  min-width: 800px;
+  min-height: 600px;
 }
 
 /* Background & Parallax */
@@ -165,7 +172,7 @@ h2 {
 /* Layout & Reveal */
 .section {
   min-height: 100vh;
-  padding: 12vh 5vw 8vh;
+  padding: clamp(4rem, 9vh, 7rem) clamp(1.25rem, 4vw, 5vw) clamp(3rem, 6vh, 5rem);
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -180,6 +187,11 @@ h2 {
     text-align: center;
     justify-content: center;
     gap: 2rem;
+  }
+
+  .module-card,
+  .glass-panel {
+    width: 100%;
   }
 
   .section.right-align {
@@ -199,6 +211,15 @@ h2 {
 .module-header {
   width: 100%;
   margin-bottom: 2rem;
+}
+
+.module-header h2,
+.module-card h2,
+.content h2,
+.reactor-info h3,
+.glow-text {
+  overflow-wrap: anywhere;
+  text-wrap: balance;
 }
 
 .reveal {
@@ -224,7 +245,7 @@ h2 {
 }
 
 .module-card {
-  max-width: 500px;
+  max-width: min(500px, 100%);
   flex: 1;
 }
 
@@ -303,7 +324,8 @@ h2 {
   align-items: center;
   position: relative;
   width: 100%;
-  height: 350px;
+  min-height: 320px;
+  height: clamp(320px, 30vw, 380px);
 }
 
 .float-idle {
@@ -1306,48 +1328,56 @@ h2 {
   }
 
   .subtitle-text {
-    font-size: 0.95rem;
+    font-size: 1rem;
     margin: 0 auto 2rem;
   }
 
+  .module-label {
+    font-size: 1rem;
+  }
+
+  .module-card h2,
+  .content h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.1rem;
+  }
+
+  .module-card p,
+  .content p {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .terminal-title {
+    font-size: 0.78rem;
+  }
+
+  .terminal-content {
+    padding: 1.15rem 1.2rem;
+    font-size: 0.9rem;
+  }
+
+  #credits .subtitle-text {
+    font-size: 1rem;
+  }
+
+  #credits .crew-member {
+    font-size: 1.02rem;
+  }
+
   /* Module text and visuals */
-  .ai-content-container,
-  .control-content-container {
-    gap: 2rem;
-    flex-direction: row;
-    align-items: center;
-  }
-
-  .ai-text-content,
-  .control-text-content {
-    padding: 2rem 2.25rem;
-    min-height: 0;
-    flex: 1 1 520px;
-    max-width: 520px;
-  }
-
-  .ai-text-content h2,
-  .control-text-content h2 {
-    font-size: 1.7rem;
-    margin-bottom: 1rem;
-  }
-
-  .ai-text-content p,
-  .control-text-content p {
-    font-size: 0.95rem;
-    line-height: 1.6;
-  }
-
-  /* Reduce visual sizes */
-  .ai-visual {
-    width: 260px;
+  .module-6-visual,
+  .module-7-visual {
     height: 320px;
   }
 
-  .control-visual {
-    width: 420px;
-    height: 320px;
-    flex: 0 0 420px;
+  .module-6-visual .terminal-ui {
+    max-width: 420px;
+  }
+
+  .module-card {
+    max-width: 500px;
+    padding: 2rem;
   }
 
   /* Reactor cards */
@@ -1373,12 +1403,12 @@ h2 {
 
   /* Terminal */
   .terminal-title {
-    font-size: 0.7rem;
+    font-size: 0.72rem;
   }
 
   .terminal-content {
     padding: 1rem;
-    font-size: 0.8rem;
+    font-size: 0.82rem;
   }
 
   /* Energy comparison */
@@ -1414,6 +1444,11 @@ h2 {
 
   .reactors-section {
     padding-top: 8vh;
+  }
+
+  .visual-container {
+    height: 320px;
+    min-height: 320px;
   }
 
   /* Credits: keep the full crew list visible */
