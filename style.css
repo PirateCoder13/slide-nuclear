@@ -811,129 +811,54 @@ h2 {
   }
 }
 
-/* Module 7: AI & Digital Twins */
+/* Module 6 and 7: Base layout aligned with Module 5 */
+.module-6-section,
 .module-7-section {
   max-width: 1200px;
   margin: 0 auto;
 }
 
-.ai-content-container {
-  display: flex;
-  flex-direction: row;
-  gap: 3rem;
-  align-items: center;
-  padding: 0 5vw;
-}
-
-.ai-text-content {
+.module-6-visual,
+.module-7-visual {
   flex: 1;
-  min-width: 0;
-  padding: 2.5rem;
-}
-
-.ai-text-content .module-label {
-  display: block;
-  margin-bottom: 0.5rem;
-}
-
-.ai-text-content h2 {
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
-  margin-top: 0;
-  color: var(--text-main);
-}
-
-.ai-text-content p {
-  font-size: 1rem;
-  line-height: 1.7;
-  color: #bbb;
-  margin: 0;
-}
-
-.ai-visual {
-  width: 300px;
-  height: 300px;
-  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: relative;
-  border: 1px solid var(--glass-border);
-  border-radius: 12px;
+  width: 100%;
+  height: 350px;
+}
+
+.module-6-visual .terminal-ui {
+  width: 100%;
+  max-width: 520px;
+  height: 100%;
+}
+
+.module-7-visual {
+  overflow: hidden;
+}
+
+.module-7-visual .hologram-grid,
+.module-7-visual .neural-network {
+  position: absolute;
+  inset: 0;
+}
+
+.module-7-visual .neural-network {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 @media (max-width: 900px) {
-  .ai-content-container {
-    flex-direction: column;
-    gap: 2rem;
-  }
-
-  .ai-visual {
-    width: 100%;
+  .module-6-visual,
+  .module-7-visual {
     height: 300px;
   }
-}
 
-/* Module 6: Real-Time Control Grid */
-.module-6-section {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.control-content-container {
-  display: flex;
-  flex-direction: row;
-  gap: 3rem;
-  align-items: center;
-  padding: 0 5vw;
-}
-
-.control-text-content {
-  flex: 1;
-  min-width: 0;
-  padding: 2.5rem;
-}
-
-.control-text-content .module-label {
-  display: block;
-  margin-bottom: 0.5rem;
-}
-
-.control-text-content h2 {
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
-  margin-top: 0;
-  color: var(--text-main);
-}
-
-.control-text-content p {
-  font-size: 1rem;
-  line-height: 1.7;
-  color: #bbb;
-  margin: 0;
-}
-
-.control-visual {
-  width: 500px;
-  height: 300px;
-  flex-shrink: 0;
-  position: relative;
-  border: 1px solid var(--glass-border);
-  border-radius: 12px;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-}
-
-@media (max-width: 900px) {
-  .control-content-container {
-    flex-direction: column;
-    gap: 2rem;
-  }
-
-  .control-visual {
-    width: 100%;
-    height: 300px;
+  .module-6-visual .terminal-ui {
+    max-width: 100%;
   }
 }
 
@@ -1390,13 +1315,15 @@ h2 {
   .control-content-container {
     gap: 2rem;
     flex-direction: row;
-    align-items: stretch;
+    align-items: center;
   }
 
   .ai-text-content,
   .control-text-content {
-    padding: 2rem;
-    min-height: 320px;
+    padding: 2rem 2.25rem;
+    min-height: 0;
+    flex: 1 1 520px;
+    max-width: 520px;
   }
 
   .ai-text-content h2,
@@ -1420,6 +1347,7 @@ h2 {
   .control-visual {
     width: 420px;
     height: 320px;
+    flex: 0 0 420px;
   }
 
   /* Reactor cards */
