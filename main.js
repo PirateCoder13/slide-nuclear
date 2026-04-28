@@ -2,9 +2,9 @@ document.addEventListener('DOMContentLoaded', () => {
   setupBootSequence();
   setupScrollReveal();
   setupTerminalCode();
-  setupSlider();
+  // setupSlider(); // Removed: using grid layout instead
   setupParallaxEffects();
-  setupCustomCursor();
+  // setupCustomCursor(); // Disabled: custom cursor removed
   setupParticleCanvas();
   setupKeyboardSlides();
   setupCreditsDetonationEffect();
@@ -203,59 +203,6 @@ function setupTerminalCode() {
   }
 
   addLine();
-}
-
-// Draggable Slider for Module 8
-function setupSlider() {
-  const slider = document.getElementById('reactor-slider');
-  const track = document.getElementById('slider-track');
-  if (!slider || !track) return;
-
-  let isDown = false;
-  let startX;
-  let scrollLeft;
-
-  slider.addEventListener('mousedown', (e) => {
-    isDown = true;
-    slider.classList.add('active');
-    startX = e.pageX - slider.offsetLeft;
-    scrollLeft = track.style.transform ? parseInt(track.style.transform.replace('translateX(', '').replace('px)', '')) || 0 : 0;
-  });
-
-  slider.addEventListener('mouseleave', () => { isDown = false; slider.classList.remove('active'); });
-  slider.addEventListener('mouseup', () => { isDown = false; slider.classList.remove('active'); });
-
-  slider.addEventListener('mousemove', (e) => {
-    if (!isDown) return;
-    e.preventDefault();
-    const x = e.pageX - slider.offsetLeft;
-    const walk = (x - startX) * 2;
-    let target = scrollLeft + walk;
-
-    if (target > 0) target = 0;
-    const limit = -(track.scrollWidth - slider.clientWidth);
-    if (target < limit) target = limit;
-
-    track.style.transform = `translateX(${target}px)`;
-  });
-
-  // Touch support
-  slider.addEventListener('touchstart', (e) => {
-    isDown = true;
-    startX = e.touches[0].pageX - slider.offsetLeft;
-    scrollLeft = track.style.transform ? parseInt(track.style.transform.replace('translateX(', '').replace('px)', '')) || 0 : 0;
-  }, { passive: true });
-  slider.addEventListener('touchend', () => { isDown = false; });
-  slider.addEventListener('touchmove', (e) => {
-    if (!isDown) return;
-    const x = e.touches[0].pageX - slider.offsetLeft;
-    const walk = (x - startX) * 2;
-    let target = scrollLeft + walk;
-    if (target > 0) target = 0;
-    const limit = -(track.scrollWidth - slider.clientWidth);
-    if (target < limit) target = limit;
-    track.style.transform = `translateX(${target}px)`;
-  }, { passive: true });
 }
 
 // Parallax logic

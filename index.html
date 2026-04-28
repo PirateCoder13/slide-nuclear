@@ -18,12 +18,6 @@
 </head>
 
 <body>
-  <!-- Custom Mouse Cursor -->
-  <div class="custom-cursor">
-    <div class="cursor-dot"></div>
-    <div class="cursor-ring"></div>
-  </div>
-
   <!-- Boot Overlay Loader -->
   <div id="boot-overlay">
     <div class="boot-logs" id="boot-logs"></div>
@@ -42,6 +36,38 @@
     <div class="hero-content text-center">
       <h1 class="glow-text">O Sol na Garrafa:<br><span class="highlight">A Era da Fusão Nuclear</span></h1>
       <p class="subtitle-text">Reactor Boot Sequence</p>
+    </div>
+  </section>
+
+  <!-- WHY IT MATTERS: COMPARAÇÃO DE DENSIDADE ENERGÉTICA -->
+  <section id="why-matters" class="section reveal full-width-section">
+    <div class="module-header text-center padding-bottom">
+      <h2>Por Que Importa: Densidade Energética</h2>
+      <p class="max-600 subtitle-text">Comparação de quantas joules por quilograma cada fonte libera</p>
+    </div>
+
+    <div class="energy-comparison glass-panel float-idle">
+      <div class="comparison-item">
+        <div class="comparison-bar" style="width: 10px; background: #888;"></div>
+        <div class="comparison-label">Combustíveis Fósseis</div>
+        <div class="comparison-value">~50 MJ/kg</div>
+      </div>
+
+      <div class="comparison-item">
+        <div class="comparison-bar" style="width: 400px; background: var(--neon-orange);"></div>
+        <div class="comparison-label">Fissão Nuclear</div>
+        <div class="comparison-value">~80M MJ/kg</div>
+      </div>
+
+      <div class="comparison-item">
+        <div class="comparison-bar" style="width: 1700px; background: var(--neon-blue); box-shadow: 0 0 30px var(--neon-blue);"></div>
+        <div class="comparison-label">Fusão Nuclear</div>
+        <div class="comparison-value">~340M MJ/kg</div>
+      </div>
+    </div>
+
+    <div class="comparison-highlight glass-panel">
+      <p><strong>Uma colher de chá de combustível de fusão = 10 toneladas de carvão</strong></p>
     </div>
   </section>
 
@@ -132,50 +158,51 @@
   </section>
 
   <!-- SECTION 6: ORQUESTRAÇÃO DE CÓDIGO (FOCO ADS) -->
-  <section id="module-6" class="section reveal full-width-section">
-    <div class="module-header text-center padding-bottom">
-      <div class="module-label">MÓDULO 6</div>
-      <h2>6. Malha de Controle Real-Time</h2>
-      <p class="max-600 glass-panel">A física fornece as peças, mas o software mantém o sistema vivo. Câmeras
-        infravermelhas e espectrômetros monitoram o plasma. Se a estrutura deforma apenas 1 milímetro, o Sistema de
-        Controle Digital recalcula a corrente em 19 bobinas magnéticas diferentes e aplica a correção em menos de 10
-        milissegundos.</p>
-    </div>
-    <div class="terminal-ui glass-panel float-idle">
-      <div class="terminal-bar">
-        <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
-        <span class="terminal-title">~/reactor/control_system - bash</span>
+  <section id="module-6" class="section reveal module-6-section">
+    <div class="control-content-container">
+      <div class="control-text-content module-card glass-panel float-idle">
+        <div class="module-label">MÓDULO 6</div>
+        <h2>6. Malha de Controle Real-Time</h2>
+        <p>A física fornece as peças, mas o software mantém o sistema vivo. Câmeras infravermelhas e espectrômetros monitoram o plasma. Se a estrutura deforma apenas 1 milímetro, o Sistema de Controle Digital recalcula a corrente em 19 bobinas magnéticas diferentes e aplica a correção em menos de 10 milissegundos.</p>
       </div>
-      <div class="terminal-content">
-        <div class="code-flow" id="live-code"></div>
+      <div class="control-visual float-idle glass-panel">
+        <div class="terminal-bar">
+          <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+          <span class="terminal-title">~/reactor/control_system - bash</span>
+        </div>
+        <div class="terminal-content">
+          <div class="code-flow" id="live-code"></div>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- SECTION 7: INTELIGÊNCIA ARTIFICIAL (FOCO ADS) -->
-  <section id="module-7" class="section reveal right-align full-width-section reverse-flex">
-    <div class="visual-container float-idle module-7-visual neon-box">
-      <div class="hologram-grid"></div>
-      <div class="neural-network">
-        <svg viewBox="0 0 100 100">
-          <circle cx="20" cy="50" r="2" class="node" />
-          <circle cx="50" cy="20" r="2" class="node" />
-          <circle cx="50" cy="80" r="2" class="node" />
-          <circle cx="80" cy="50" r="2" class="node" />
-          <line x1="20" y1="50" x2="50" y2="20" class="edge pulse" />
-          <line x1="20" y1="50" x2="50" y2="80" class="edge" />
-          <line x1="50" y1="20" x2="80" y2="50" class="edge" />
-          <line x1="50" y1="80" x2="80" y2="50" class="edge pulse" />
-          <line x1="50" y1="20" x2="50" y2="80" class="edge" />
-        </svg>
+  <section id="module-7" class="section reveal module-7-section">
+    <div class="ai-content-container">
+      <div class="ai-text-content module-card glass-panel float-idle">
+        <div class="module-label">MÓDULO 7</div>
+        <h2>7. Deep Learning & Gêmeos Digitais</h2>
+        <p>O plasma é caótico. Para dominá-lo, algoritmos de Aprendizado de Reforço da DeepMind ajustam o campo magnético
+          milhares de vezes por segundo. Computadores de Exaescala rodam "Gêmeos Digitais", criando cópias virtuais
+          massivas para testar a magnetoidrodinâmica antes de ligar a máquina física.</p>
       </div>
-    </div>
-    <div class="content module-card glass-panel float-idle delay-2">
-      <div class="module-label">MÓDULO 7</div>
-      <h2>7. Deep Learning & Gêmeos Digitais</h2>
-      <p>O plasma é caótico. Para dominá-lo, algoritmos de Aprendizado de Reforço da DeepMind ajustam o campo magnético
-        milhares de vezes por segundo. Computadores de Exaescala rodam "Gêmeos Digitais", criando cópias virtuais
-        massivas para testar a magnetoidrodinâmica antes de ligar a máquina física.</p>
+      <div class="ai-visual float-idle neon-box module-7-visual">
+        <div class="hologram-grid"></div>
+        <div class="neural-network">
+          <svg viewBox="0 0 100 100">
+            <circle cx="20" cy="50" r="2" class="node" />
+            <circle cx="50" cy="20" r="2" class="node" />
+            <circle cx="50" cy="80" r="2" class="node" />
+            <circle cx="80" cy="50" r="2" class="node" />
+            <line x1="20" y1="50" x2="50" y2="20" class="edge pulse" />
+            <line x1="20" y1="50" x2="50" y2="80" class="edge" />
+            <line x1="50" y1="20" x2="80" y2="50" class="edge" />
+            <line x1="50" y1="80" x2="80" y2="50" class="edge pulse" />
+            <line x1="50" y1="20" x2="50" y2="80" class="edge" />
+          </svg>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -188,44 +215,70 @@
         ao redor do globo em nossa corrida comercial.</p>
     </div>
 
-    <div class="slider-container" id="reactor-slider">
-      <div class="slider-track" id="slider-track">
-
-        <div class="slider-card glass-panel float-idle neon-blue">
-          <div class="reactor-visual sparc-visual"></div>
-          <div class="reactor-info">
-            <h3>SPARC</h3>
-            <p>Usa ímãs HTS para gerar campos de 20 Tesla.</p>
-          </div>
+    <div class="reactors-list">
+      <div class="reactor-card glass-panel float-idle">
+        <div class="reactor-visual reactor-sparc"></div>
+        <div class="reactor-info">
+          <h3>SPARC — Commonwealth Fusion Systems</h3>
+          <ul class="reactor-details">
+            <li><strong>Tipo:</strong> Tokamak compacto de alta densidade magnética</li>
+            <li><strong>Localização:</strong> Massachusetts, EUA (MIT)</li>
+            <li><strong>Ímãs:</strong> HTS (REBCO) operando a 20 Tesla — recorde mundial</li>
+            <li><strong>Tamanho:</strong> ~40x menor que ITER, mantendo mesma potência</li>
+            <li><strong>Objetivo:</strong> Q > 10 (produzir 10 vezes mais energia que consome)</li>
+            <li><strong>Curiosidade:</strong> Primeiro plasma em 2026; será o primeiro reator privado a atingir ganho de energia</li>
+            <li><strong>Combustível:</strong> Deutério-Trítio (D-T)</li>
+          </ul>
         </div>
-
-        <div class="slider-card glass-panel float-idle neon-purple delay-1">
-          <div class="reactor-visual polaris-visual"></div>
-          <div class="reactor-info">
-            <h3>Polaris</h3>
-            <p>Acelera anéis de plasma em linha reta e gera eletricidade diretamente do magnetismo, sem precisar de
-              turbinas a vapor.</p>
-          </div>
-        </div>
-
-        <div class="slider-card glass-panel float-idle neon-orange delay-2">
-          <div class="reactor-visual jt60sa-visual"></div>
-          <div class="reactor-info">
-            <h3>JT-60SA</h3>
-            <p>O laboratório gigante do Japão testando estabilidade de longo prazo.</p>
-          </div>
-        </div>
-
-        <div class="slider-card glass-panel float-idle neon-cyan delay-3">
-          <div class="reactor-visual wendelstein-7x-visual"></div>
-          <div class="reactor-info">
-            <h3>Wendelstein 7-X</h3>
-            <p>O inovador reator Stellarator alemão com geometria helicoidal para confinamento de plasma otimizado. Quebrou recorde de duração em 2018.</p>
-          </div>
-        </div>
-
       </div>
-      <div class="slider-instructions">Arraste para explorar ►</div>
+
+      <div class="reactor-card glass-panel float-idle delay-1">
+        <div class="reactor-visual reactor-polaris"></div>
+        <div class="reactor-info">
+          <h3>Polaris — Helion Energy</h3>
+          <ul class="reactor-details">
+            <li><strong>Tipo:</strong> Configuração FRC (Field-Reversed Configuration) + acelerador linear</li>
+            <li><strong>Método único:</strong> Comprime dois anéis de plasma um contra o outro em linha reta</li>
+            <li><strong>Recordes:</strong> Atingiu ~150 milhões °C (fev/2026) — temperatura de fusão</li>
+            <li><strong>Diferencial:</strong> Recuperação <strong>direta de energia</strong> do campo magnético (sem turbinas a vapor)</li>
+            <li><strong>Combustível opcional:</strong> D-T ou Deutério-Hélio 3 (aneutrônico)</li>
+            <li><strong>Curiosidade:</strong> Projeto ambicioso de alcançar comercialização rápida (~2024-2026)</li>
+            <li><strong>Eficiência:</strong> Elimina ciclos térmicos complexos, aumentando rendimento</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="reactor-card glass-panel float-idle delay-2">
+        <div class="reactor-visual reactor-jt60sa"></div>
+        <div class="reactor-info">
+          <h3>JT-60SA — Japão &amp; União Europeia</h3>
+          <ul class="reactor-details">
+            <li><strong>Tipo:</strong> Tokamak de grande porte para pesquisa colaborativa</li>
+            <li><strong>Status:</strong> Maior Tokamak supercondutor em operação (2026)</li>
+            <li><strong>Objetivo:</strong> Testar estabilização em regime de estado estacionário (operação contínua)</li>
+            <li><strong>Escala:</strong> Muito maior que SPARC — foca em durabilidade, não compacidade</li>
+            <li><strong>Parceria:</strong> Desenvolvimento conjunto Japão (JAEA) e UE (Fusion for Energy)</li>
+            <li><strong>Curiosidade:</strong> Serve como laboratório oficial de testes para o ITER</li>
+            <li><strong>Revestimento:</strong> Atualizado com carbono e novos sistemas de controle</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="reactor-card glass-panel float-idle delay-3">
+        <div class="reactor-visual reactor-wendelstein"></div>
+        <div class="reactor-info">
+          <h3>Wendelstein 7-X — Alemanha</h3>
+          <ul class="reactor-details">
+            <li><strong>Tipo:</strong> Stellarator com geometria helicoidal inovadora</li>
+            <li><strong>Diferencial:</strong> Simetria contínua no confinamento (vs. Tokamak com quebras)</li>
+            <li><strong>Geometria:</strong> 5 bobinas planares + 10 bobinas não-planares para máxima estabilidade</li>
+            <li><strong>Recordes:</strong> Quebrou recorde de duração do plasma (~8 minutos, 2018)</li>
+            <li><strong>Localização:</strong> Greifswald, Alemanha (Max Planck Institute)</li>
+            <li><strong>Curiosidade:</strong> Prova que Stellarators podem ser tão eficientes quanto Tokamaks (quebra mito histórico)</li>
+            <li><strong>Pesquisa:</strong> Foca em compreender confinamento em regime de longa duração</li>
+          </ul>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -264,9 +317,9 @@
       <div class="atom-orbit orbit-3"></div>
     </div>
 
-    <a class="video-preview-link glass-panel" href="https://youtu.be/phQ9LpYCoIQ?si=G99xzuwp61pgC5Kk" target="_blank" rel="noopener noreferrer" aria-label="Abrir video no YouTube">
-      <img class="video-preview-image" src="https://img.youtube.com/vi/phQ9LpYCoIQ/hqdefault.jpg" alt="Preview do video sobre IA controlando reator de fusao nuclear">
-      <span class="video-preview-cta">Assistir no YouTube</span>
+    <a class="video-preview-link" href="https://youtu.be/phQ9LpYCoIQ?si=G99xzuwp61pgC5Kk" target="_blank" rel="noopener noreferrer" aria-label="Assistir video no YouTube sobre IA controlando reator de fusao nuclear">
+      <img class="video-preview-image" src="https://img.youtube.com/vi/phQ9LpYCoIQ/hqdefault.jpg" alt="Preview do video: IA aprende a controlar reator de fusao nuclear">
+      <span class="video-preview-cta">▶ Assistir no YouTube</span>
     </a>
   </section>
 
